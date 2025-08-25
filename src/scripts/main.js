@@ -1,10 +1,23 @@
 'use strict';
 
-const wall = document.querySelector('.wall');
-const spyder = document.querySelector('.spider');
+document.addEventListener('DOMContentLoaded', () => {
+  const wall = document.querySelector('.wall');
+  const spider = document.querySelector('.spider');
 
-const leftPos = wall.clientWidth / 2 - spyder.clientWidth / 2;
-const topPos = wall.clientHeight / 2 - spyder.clientHeight / 2;
+  if (spider.complete) {
+    centerSpider(wall, spider);
+  } else {
+    spider.addEventListener('load', () => centerSpider(wall, spider));
+  }
+});
 
-spyder.style.left = leftPos + 'px';
-spyder.style.top = topPos + 'px';
+function centerSpider(wall, spider) {
+  const leftPos = wall.clientWidth / 2 - spider.clientWidth / 2;
+  const topPos = wall.clientHeight / 2 - spider.clientHeight / 2;
+
+  wall.style.position = 'relative';
+  spider.style.position = 'absolute';
+
+  spider.style.left = leftPos + 'px';
+  spider.style.top = topPos + 'px';
+}
