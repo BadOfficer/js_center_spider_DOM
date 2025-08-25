@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     spider.addEventListener('load', () => centerSpider(wall, spider));
   }
+
+  window.addEventListener('resize', () => centerSpider(wall, spider));
 });
 
 function centerSpider(wall, spider) {
