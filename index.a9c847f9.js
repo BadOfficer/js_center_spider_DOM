@@ -1,0 +1,2 @@
+function e(e,t){var n=e.clientWidth/2-t.clientWidth/2,i=e.clientHeight/2-t.clientHeight/2;e.style.position="relative",t.style.position="absolute",t.style.left=n+"px",t.style.top=i+"px"}document.addEventListener("DOMContentLoaded",function(){var t=document.querySelector(".wall"),n=document.querySelector(".spider");n.complete?e(t,n):n.addEventListener("load",function(){return e(t,n)}),window.addEventListener("resize",function(){return e(t,n)})});
+//# sourceMappingURL=index.a9c847f9.js.map
